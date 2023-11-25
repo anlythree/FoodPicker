@@ -5,7 +5,7 @@
 //  Created by anlythree on 2023/11/25.
 //
 
-struct Food {
+struct Food : Equatable{
     var name: String
     var image: String
     // 卡路里
@@ -17,7 +17,7 @@ struct Food {
     // 蛋白质
     var protein:Double
     
-    static let example : Array<Food> = [
+    static let foodExampleList : Array<Food> = [
         Food(name: "汉堡", image: "🍔", calorie: 294, carb: 14, fat: 24, protein: 17),
         Food(name: "沙拉", image: "🥗", calorie: 89, carb: 20, fat: 0, protein: 1.8),
         Food(name: "披萨", image: "🍕", calorie: 266, carb: 33, fat: 10, protein: 11),

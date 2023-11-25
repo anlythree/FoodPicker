@@ -9,42 +9,59 @@ import SwiftUI
 
 // View 是一个Protocol,只要实现了View就可以在页面上显示
 // View定义的唯一要求就是需要定义一个body属性，里边会描述这个view会长什么样子
-struct ContentView: View { 
+struct ContentView: View {
     // 可选择的食物列表
-    let foodList = ["汉堡🍔","炸鸡🍗","薯条🍟","奶油蘑菇浓汤🍲","吃土"]
+    let foodList : Array<Food> = Food.foodExampleList
     // 被选择的食物
     // @State注解：swift在struct中不能修改自己的属性，所以需要创建一个Class，在Class中维护selectedFood，而且目前我们还需要selectedfood变动的时候通知ContentView。所以swift为了方便这种场景封装了State注解来完成上边说的那些事情。
     // 我们大概可以认为要在一个struct中修改的变量就需要加上State注解
-    @State var selectedFood: String?
+    @State var selectedFood: Food?
     
     // 最外层的View
     var body: some View {
         // 这里的spacing：30 是相当于给这个VStack里的每一个元素都加了个30的padding
         VStack(spacing: 30) {
-            Image("dinner")
-            // 可以被重新设置大小
-                .resizable()
-            // fit就是swift自动找到一个合适的大小
-                .aspectRatio(contentMode: .fit)
+            // Group是一个特殊的view，他可以给里边的view赋予同样的调整器
+            Group{
+                if(selectedFood == nil){
+                    Image("dinner")
+                    // 可以被重新设置大小,而且加了resizable的图片会尝试撑满整个画面
+                        .resizable()
+                    // fit就是swift自动找到一个合适的大小
+                        .aspectRatio(contentMode: .fit)
+                }else{
+                    Text(selectedFood!.image)
+                        .font(.system(size: 200))
+                    //有一些image是由两个emoj组成的，后边的emoj放不开swift会默认给缩放成…这样很难看，所以需要用到这个调整器，来设置如果排不开的话缩放多少
+                        .minimumScaleFactor(0.7)
+                    //但是这样调整完之后两个emoj分成了两行，变成了上下排列，所以需要下边这个调整器来告诉swift最多用几行来显示
+                        .lineLimit(1)
+                }
+            }.frame(height: 250)
+            // 在开发的时候显示边界，方便自己判断view的大小边界
+//                .border(.blue)
+            
+            //用来占满View的剩余空间，防止底下的按钮总是动，以至于连续点换一个可能点到重制按钮
+            Spacer()
             
             Text("今天吃什么?")
             // 设置成最大字体
             // 字体加粗
                 .bold()
-            if(selectedFood != .none){
+            if(selectedFood != nil){
                 // 只有当选中食物不为空的时候才显示选择的食物
-                Text(selectedFood ?? "？？？")
+                Text(selectedFood?.name ?? "？？？")
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.green)
-                    //设置id是一个技巧，这样id不同swift就会认为是不同的view然后使用转场效果，而不是变形
-                    //不设置id的话这个TextView会根据不同的ios版本的规则表现出不一样的效果，这样很不好
-                    .id(selectedFood)
-                    // 这个效果很难看，哈哈，这里只是做个演示
-                    //.scale是表示逐渐变大，combined是表示从左边滑出.所以整个效果是从左边一边变大一边滑出
-                    // 而且再点击，会从右边一边变小一边从右边滑出
-//                    .transition(.scale.combined(with: .slide))
-                    // 当然进场和出场动画可以分别设置
+                //设置id是一个技巧，这样id不同swift就会认为是不同的view然后使用转场效果，而不是变形
+                //不设置id的话这个TextView会根据不同的ios版本的规则表现出不一样的效果，这样很不好
+                    .id(selectedFood?.name)
+                // 这个效果很难看，哈哈，这里只是做个演示
+                //.scale是表示逐渐变大，combined是表示从左边滑出.所以整个效果是从左边一边变大一边滑出
+                // 而且再点击，会从右边一边变小一边从右边滑出
+                //                    .transition(.scale.combined(with: .slide))
+                // 当然进场和出场动画可以分别设置
                     .transition(.asymmetric(
                         //进场：淡入淡出，持续0.5秒，延时0.2秒，这个延时的意思是效果延迟0.2秒再显示，也就是效果一直在发生，只是0.2秒之后开始表现出来
                         //所以这里整体效果就是前一个食物慢慢消失，后一个食物唰一下显示出来
@@ -62,7 +79,7 @@ struct ContentView: View {
             } label: {
                 Text(selectedFood == .none ? "告诉我" : "换一个")
                     .frame(width: 200)
-                    
+                
             }.transformEffect(.identity)
             // .bordered就是加一个padding的效果成一个圆角矩形
                 .padding(.bottom, -15)
@@ -77,8 +94,8 @@ struct ContentView: View {
                 .buttonStyle(.bordered)
         }
         .padding()
-        // frame设置：一些限制，比如这里显示高度为无穷大
-        .frame(maxHeight: .infinity)
+        //frame设置：因为Vstack的排版类型是Neutral，所以需要里边的子View来决定要多大，这里宽度和高度都设置成无穷大，这样下边的背景图才会占满全屏
+        .frame(maxWidth: .infinity ,maxHeight: .infinity)
         //加上这个背景，白色的图片的外边才会显示出来，要不然白色的背景的图片的背景就重合了
         .background(Color(.secondarySystemBackground))
         .font(.title)
