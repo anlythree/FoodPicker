@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE645FA12B11AADF00668BB1 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE645FA02B11AADF00668BB1 /* Food.swift */; };
 		DE8BB2BF2B0A44330068F199 /* FoodPickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8BB2BE2B0A44330068F199 /* FoodPickerApp.swift */; };
 		DE8BB2C12B0A44330068F199 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8BB2C02B0A44330068F199 /* ContentView.swift */; };
 		DE8BB2C32B0A44340068F199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8BB2C22B0A44340068F199 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE645FA02B11AADF00668BB1 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		DE8BB2BB2B0A44330068F199 /* FoodPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8BB2BE2B0A44330068F199 /* FoodPickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPickerApp.swift; sourceTree = "<group>"; };
 		DE8BB2C02B0A44330068F199 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE645F9F2B11AACE00668BB1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DE645FA02B11AADF00668BB1 /* Food.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		DE8BB2B22B0A44330068F199 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		DE8BB2BD2B0A44330068F199 /* FoodPicker */ = {
 			isa = PBXGroup;
 			children = (
+				DE645F9F2B11AACE00668BB1 /* model */,
 				DE8BB2BE2B0A44330068F199 /* FoodPickerApp.swift */,
 				DE8BB2C02B0A44330068F199 /* ContentView.swift */,
 				DE8BB2C22B0A44340068F199 /* Assets.xcassets */,
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8BB2C12B0A44330068F199 /* ContentView.swift in Sources */,
+				DE645FA12B11AADF00668BB1 /* Food.swift in Sources */,
 				DE8BB2BF2B0A44330068F199 /* FoodPickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,8 +440,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,8 +469,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
