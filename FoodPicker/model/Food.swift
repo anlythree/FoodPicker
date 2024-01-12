@@ -9,13 +9,13 @@ struct Food : Equatable{
     var name: String
     var image: String
     // 卡路里
-    var calorie: Double
+    @Suffix("大卡") var calorie: Double = .zero
     // carb在食物领域表示碳水化合物
-    var carb: Double
+    @Suffix("g") var carb: Double = .zero
     // 脂肪
-    var fat:Double
+    @Suffix("g") var fat:Double = .zero
     // 蛋白质
-    var protein:Double
+    @Suffix("g") var protein:Double = .zero
     
     static let foodExampleList : Array<Food> = [
         Food(name: "汉堡", image: "🍔", calorie: 294, carb: 14, fat: 24, protein: 17),
@@ -29,3 +29,5 @@ struct Food : Equatable{
         Food(name: "关东煮", image: "🍢", calorie: 80, carb: 4, fat: 4, protein: 6),
     ]
 }
+
+

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DE1DA70D2B13A51900046FD5 /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DA70C2B13A51900046FD5 /* PreviewDevice.swift */; };
+		DE2D81802B49119F00420803 /* FillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D817E2B4910DB00420803 /* FillColor.swift */; };
+		DE35CB032B1C42820044054B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35CB022B1C42820044054B /* Extensions.swift */; };
+		DE35CB052B1C47310044054B /* SuffixWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35CB042B1C47310044054B /* SuffixWrapper.swift */; };
 		DE645FA12B11AADF00668BB1 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE645FA02B11AADF00668BB1 /* Food.swift */; };
 		DE8BB2BF2B0A44330068F199 /* FoodPickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8BB2BE2B0A44330068F199 /* FoodPickerApp.swift */; };
 		DE8BB2C12B0A44330068F199 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8BB2C02B0A44330068F199 /* ContentView.swift */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		DE1DA70C2B13A51900046FD5 /* PreviewDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDevice.swift; sourceTree = "<group>"; };
+		DE2D817E2B4910DB00420803 /* FillColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillColor.swift; sourceTree = "<group>"; };
+		DE35CB022B1C42820044054B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DE35CB042B1C47310044054B /* SuffixWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixWrapper.swift; sourceTree = "<group>"; };
 		DE645FA02B11AADF00668BB1 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		DE8BB2BB2B0A44330068F199 /* FoodPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8BB2BE2B0A44330068F199 /* FoodPickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPickerApp.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		DE645F9F2B11AACE00668BB1 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				DE2D817E2B4910DB00420803 /* FillColor.swift */,
 				DE645FA02B11AADF00668BB1 /* Food.swift */,
 				DE1DA70C2B13A51900046FD5 /* PreviewDevice.swift */,
 			);
@@ -110,8 +117,10 @@
 				DE645F9F2B11AACE00668BB1 /* model */,
 				DE8BB2BE2B0A44330068F199 /* FoodPickerApp.swift */,
 				DE8BB2C02B0A44330068F199 /* ContentView.swift */,
+				DE35CB022B1C42820044054B /* Extensions.swift */,
 				DE8BB2C22B0A44340068F199 /* Assets.xcassets */,
 				DE8BB2C42B0A44340068F199 /* Preview Content */,
+				DE35CB042B1C47310044054B /* SuffixWrapper.swift */,
 			);
 			path = FoodPicker;
 			sourceTree = "<group>";
@@ -271,7 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE35CB052B1C47310044054B /* SuffixWrapper.swift in Sources */,
+				DE35CB032B1C42820044054B /* Extensions.swift in Sources */,
 				DE1DA70D2B13A51900046FD5 /* PreviewDevice.swift in Sources */,
+				DE2D81802B49119F00420803 /* FillColor.swift in Sources */,
 				DE8BB2C12B0A44330068F199 /* ContentView.swift in Sources */,
 				DE645FA12B11AADF00668BB1 /* Food.swift in Sources */,
 				DE8BB2BF2B0A44330068F199 /* FoodPickerApp.swift in Sources */,
